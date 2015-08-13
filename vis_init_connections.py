@@ -53,14 +53,15 @@ dd = {'uid': uid_array, 'x': x_array, 'y': y_array, 'z': z_array, 'type': type_a
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.scatter(dd['x'], dd['y'], dd['z'], c=dd['color'])
-
-for ii in range(0,1):#len(dd['uid'])):
-    for jj in range(0,len(dd['nlist'][ii])):
-        ax.plot([dd['x'][ii],dd['x'][dd['nlist'][ii][jj]]], [dd['y'][ii],dd['y'][dd['nlist'][ii][jj]]], [dd['z'][ii],dd['z'][dd['nlist'][ii][jj]]], c='red')
-
-
+    
+#for ii in range(len(dd['uid'])):
+    #fig = plt.figure()
+    #ax = fig.add_subplot(111, projection='3d')
+    #ax.scatter(dd['x'], dd['y'], dd['z'], c=dd['color'])
+   # for jj in range(0,len(dd['nlist'][ii])):
+    #    ax.plot([dd['x'][ii],dd['x'][dd['nlist'][ii][jj]]], [dd['y'][ii],dd['y'][dd['nlist'][ii][jj]]], [dd['z'][ii],dd['z'][dd['nlist'][ii][jj]]], c='red') 
+    #plt.show()
 plt.show()
-
 
 
 
