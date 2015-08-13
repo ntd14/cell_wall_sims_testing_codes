@@ -28,11 +28,15 @@ for row in data:
     z_array[ii] = row[3]
     type_array[ii] = row[4]
     if row[4] == ' H2O':
-        color_array[ii] = 'blue'
-    elif row[4] == ' FA1' or row[4] == ' FA2':
+        color_array[ii] = 'white'
+    elif row[4] == ' FA1':
         color_array[ii] = 'green'
-    elif row[4] == ' HC1' or row[4] == ' HC2':
+    elif row[4] == ' FA2':
+        color_array[ii] = 'blue'
+    elif row[4] == ' HC1':
         color_array[ii] = 'red'
+    elif row[4] == ' HC2':
+        color_array[ii] = 'gray'
     else:
         color_array = 'black'
         print('no col assigned to type')
