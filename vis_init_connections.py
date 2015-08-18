@@ -57,19 +57,25 @@ dd = {'uid': uid_array, 'x': x_array, 'y': y_array, 'z': z_array, 'type': type_a
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.scatter(dd['x'], dd['y'], dd['z'], c=dd['color'])
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
 plt.show()
 
-#for ii in range(len(dd['uid'])):
-#    fig = plt.figure()
-#    ax = fig.add_subplot(111, projection='3d')
-#    ax.scatter(dd['x'], dd['y'], dd['z'], c=dd['color'])
-#    try:
-#        ml = len(dd['nlist'][ii])
-#        for jj in range(0,ml):
-#           ax.plot([dd['x'][ii],dd['x'][dd['nlist'][ii][jj]]], [dd['y'][ii],dd['y'][dd['nlist'][ii][jj]]], [dd['z'][ii],dd['z'][dd['nlist'][ii][jj]]], c='red') 
-#        plt.show()
-#    except:
-#        pass
+for ii in range(len(dd['uid'])):
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.scatter(dd['x'], dd['y'], dd['z'], c=dd['color'])
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
+    ax.set_zlabel("z")
+    try:
+        ml = len(dd['nlist'][ii])
+        for jj in range(0,ml):
+           ax.plot([dd['x'][ii],dd['x'][dd['nlist'][ii][jj]]], [dd['y'][ii],dd['y'][dd['nlist'][ii][jj]]], [dd['z'][ii],dd['z'][dd['nlist'][ii][jj]]], c='red') 
+        plt.show()
+    except:
+        pass
 
 
 
