@@ -28,11 +28,11 @@ for row in data:
     z_array[ii] = row[3]
     type_array[ii] = row[4]
     if row[4] == ' H2O':
-        color_array[ii] = 'white'
+        color_array[ii] = 'blue'
     elif row[4] == ' FA1':
         color_array[ii] = 'green'
     elif row[4] == ' FA2':
-        color_array[ii] = 'blue'
+        color_array[ii] = 'white'
     elif row[4] == ' HC1':
         color_array[ii] = 'red'
     elif row[4] == ' HC2':
@@ -57,16 +57,19 @@ dd = {'uid': uid_array, 'x': x_array, 'y': y_array, 'z': z_array, 'type': type_a
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.scatter(dd['x'], dd['y'], dd['z'], c=dd['color'])
-    
-#for ii in range(len(dd['uid'])):
-    #fig = plt.figure()
-    #ax = fig.add_subplot(111, projection='3d')
-    #ax.scatter(dd['x'], dd['y'], dd['z'], c=dd['color'])
-   # for jj in range(0,len(dd['nlist'][ii])):
-    #    ax.plot([dd['x'][ii],dd['x'][dd['nlist'][ii][jj]]], [dd['y'][ii],dd['y'][dd['nlist'][ii][jj]]], [dd['z'][ii],dd['z'][dd['nlist'][ii][jj]]], c='red') 
-    #plt.show()
 plt.show()
 
+#for ii in range(len(dd['uid'])):
+#    fig = plt.figure()
+#    ax = fig.add_subplot(111, projection='3d')
+#    ax.scatter(dd['x'], dd['y'], dd['z'], c=dd['color'])
+#    try:
+#        ml = len(dd['nlist'][ii])
+#        for jj in range(0,ml):
+#           ax.plot([dd['x'][ii],dd['x'][dd['nlist'][ii][jj]]], [dd['y'][ii],dd['y'][dd['nlist'][ii][jj]]], [dd['z'][ii],dd['z'][dd['nlist'][ii][jj]]], c='red') 
+#        plt.show()
+#    except:
+#        pass
 
 
 
