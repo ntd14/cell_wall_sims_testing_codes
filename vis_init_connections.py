@@ -19,7 +19,6 @@ type_array = [None]*len(data)
 nlistlen_array = np.empty(len(data), dtype=int)
 nlist_array = [None]*len(data)
 color_array = [None]*len(data)
-alpha_array = np.empty(len(data))
 
 ii = 0
 for row in data:
@@ -29,20 +28,15 @@ for row in data:
     z_array[ii] = row[3]
     type_array[ii] = row[4]
     if row[4] == ' H2O':
-        color_array[ii] = 0.1
-        alpha_array[ii] = 0.6
+        color_array[ii] = [0, 0.3, 0.9, 0.8]
     elif row[4] == ' FA1':
-        color_array[ii] = 0.4
-        alpha_array[ii] = 0.3
+        color_array[ii] = [0.9, 0.3, 0.3, 0.8]
     elif row[4] == ' FA2':
-        color_array[ii] = 0.4#'white'
-        alpha_array[ii] = 0.3
+        color_array[ii] = [0.9, 0.3, 0.3, 0.8]
     elif row[4] == ' HC1':
-        color_array[ii] = 0.8
-        alpha_array[ii] = 0.3
+        color_array[ii] = [0, 0.4, 0, 0.2]
     elif row[4] == ' HC2':
-        color_array[ii] = 0.8#'gray'
-        alpha_array[ii] = 0.3
+        color_array[ii] = [0, 0.4, 0, 0.2]
     else:
         color_array = 'black'
         print('no col assigned to type')
@@ -57,11 +51,10 @@ for row in data:
     ii = ii + 1
 
 
-dd = {'uid': uid_array, 'x': x_array, 'y': y_array, 'z': z_array, 'type': type_array, 'nlistlen': nlistlen_array, 'nlist': nlist_array, 'color': color_array, 'alpha': alpha_array}
+dd = {'uid': uid_array, 'x': x_array, 'y': y_array, 'z': z_array, 'type': type_array, 'nlistlen': nlistlen_array, 'nlist': nlist_array, 'color': color_array}
 
 rgba_colors = np.zeros((len(dd['color']), 4))
-rgba_colors[:,0] = dd['color']
-rgba_colors[:,3] = dd['alpha']
+rgba_colors = dd['color']
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
